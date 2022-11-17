@@ -1,12 +1,12 @@
 import Moralis from 'moralis';
-import express from 'express';
-import cors from 'cors';
-import config from './config';
-import { parseServer } from './parseServer';
 // @ts-ignore
 import ParseServer from 'parse-server';
+import config from './config';
+import cors from 'cors';
+import express from 'express';
 import http from 'http';
 import ngrok from 'ngrok';
+import { parseServer } from './parseServer';
 import { streamsSync } from '@moralisweb3/parse-server';
 
 export const app = express();
@@ -29,7 +29,7 @@ if (config.USE_STREAMS) {
   );
 }
 
-app.use(`/server`, parseServer.app);
+app.use(`/server`, parseServer);
 
 const httpServer = http.createServer(app);
 httpServer.listen(config.PORT, async () => {
