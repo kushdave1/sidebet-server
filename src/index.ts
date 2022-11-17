@@ -29,7 +29,7 @@ if (config.USE_STREAMS) {
   );
 }
 
-app.use(`/server`, parseServer);
+app.use(`/server`, parseServer.app);
 
 const httpServer = http.createServer(app);
 httpServer.listen(config.PORT, async () => {

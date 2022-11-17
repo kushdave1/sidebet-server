@@ -1,6 +1,7 @@
 import MoralisEthAdapter from './auth/MoralisEthAdapter';
 // @ts-ignore
-import { ParseServer } from 'parse-server';
+// import { ParseServer } from 'parse-server';
+import ParseServer from 'parse-server';
 import config from './config';
 
 export const parseServer = new ParseServer({
