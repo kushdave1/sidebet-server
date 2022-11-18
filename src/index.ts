@@ -9,7 +9,7 @@ import ngrok from 'ngrok';
 import { parseServer } from './parseServer';
 import { streamsSync } from '@moralisweb3/parse-server';
 
-export const app = express();
+export const app: any = express();
 
 Moralis.start({
   apiKey: config.MORALIS_API_KEY,
