@@ -8,7 +8,7 @@ import http from 'http';
 import ngrok from 'ngrok';
 import { parseServer } from './parseServer';
 import { streamsSync } from '@moralisweb3/parse-server';
-
+import { parseDashboard } from './parseDashboard';
 export const app: any = express();
 
 Moralis.start({
@@ -30,7 +30,8 @@ if (config.USE_STREAMS) {
 }
 
 app.use(`/server`, parseServer.app);
-
+// Add the new route // 
+app.use(`/dashboard`, parseDashboard);
 const httpServer = http.createServer(app);
 httpServer.listen(config.PORT, async () => {
   if (config.USE_STREAMS) {

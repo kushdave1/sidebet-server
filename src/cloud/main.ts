@@ -6,7 +6,8 @@ import './generated/evmApi';
 import './generated/solApi';
 
 import { requestMessage } from '../auth/authService';
-
+// @ts-ignore
+import { logger } from "parse-server";
 Parse.Cloud.define('requestMessage', async ({ params }: any) => {
   const { address, chain, networkType } = params;
 
@@ -30,6 +31,8 @@ Parse.Cloud.define('getServerTime', () => {
 });
 
 Parse.Cloud.define('tf1', () => {
+  logger.info('this is a logged message from a cloud function');
+  logger.error('this is a logged error from a cloud function 1');
   return ['this is test function 1'];
 });
 
