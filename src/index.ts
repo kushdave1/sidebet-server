@@ -30,7 +30,7 @@ if (config.USE_STREAMS) {
 }
 
 app.use(`/server`, parseServer.app);
-// Add the new route // 
+// Add the new route //
 app.use(`/dashboard`, parseDashboard);
 const httpServer = http.createServer(app);
 httpServer.listen(config.PORT, async () => {

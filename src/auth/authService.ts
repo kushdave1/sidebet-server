@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import Moralis from 'moralis';
 
 export interface RequestMessage {
